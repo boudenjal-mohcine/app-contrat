@@ -1,1 +1,62 @@
-<p>home works!</p>
+<div class="container my-5">
+  <div class="row my-5 px-3">
+    <div class="col-md-2 mb-2">
+      <select
+        class="form-select"
+        aria-label="Default select example"
+        [(ngModel)]="selectedCategory"
+        (ngModelChange)="categorySelected()"
+      >
+        <option value="Category" disabled>Categorie</option>
+        <option *ngFor="let category of categories" [value]="category">
+          {{ category }}
+        </option>
+      </select>
+    </div>
+    <div class="col-md-2 mb-2">
+      <select
+        class="form-select"
+        aria-label="Default select example"
+        [(ngModel)]="selectedType"
+        (ngModelChange)="typeSelected()"
+        [disabled]="selectedCategory === 'Category'"
+      >
+        <option value="Type" disabled>Type</option>
+        <option *ngFor="let type of types" [value]="type">{{ type }}</option>
+      </select>
+    </div>
+    <div class="col-md-2 mb-2">
+      <select
+        class="form-select"
+        aria-label="Default select example"
+        [(ngModel)]="selectedSousType"
+        (ngModelChange)="sousTypeSelected()"
+        [disabled]="selectedType === 'Type'"
+      >
+        <option value="Sous Type" disabled>Sous Type</option>
+        <option *ngFor="let sousType of sousTypes" [value]="sousType">
+          {{ sousType }}
+        </option>
+      </select>
+    </div>
+    <div class="col-md-6 d-flex justify-content-end mt-2">
+      <mat-icon>view_list</mat-icon>
+      <mat-icon>view_module</mat-icon>
+    </div>
+  </div>
+
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    <div class="card col">
+      <app-card [card]="card1"></app-card>
+    </div>
+    <div class="card col">
+      <app-card [card]="card2"></app-card>
+    </div>
+    <div class="card col">
+      <app-card [card]="card3"></app-card>
+    </div>
+    <div class="card col">
+      <app-card [card]="card4"></app-card>
+    </div>
+  </div>
+</div>

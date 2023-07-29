@@ -8,19 +8,25 @@ import { CdiComponent } from './components/cdi/cdi.component';
 import { ShowComponent } from './components/show/show.component';
 import { HomeComponent } from './components/home/home.component';
 import { CreateComponent } from './components/create/create.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CddComponent,
-    CdiComponent,
     ShowComponent,
-    HomeComponent,
-    CreateComponent
+    CreateComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    CddComponent,
+    CdiComponent,
+    HomeComponent,
+    FormsModule,
+    CardComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

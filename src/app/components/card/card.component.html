@@ -1,0 +1,19 @@
+<div (mouseenter)="isHovered = true" (mouseleave)="isHovered = false">
+  <div class="card-image">
+    <button class="use-this-model-btn" *ngIf="isHovered">
+      Utiliser ce modéle
+    </button>
+    <img [src]="card?.image" alt="cdi" />
+  </div>
+  <div class="category mt-1">
+    {{ card?.category }} / {{ card?.type }} / {{ card?.sousType }}
+  </div>
+  <div class="heading mt-1 text-center">
+    <a
+      routerLink="/dash/projects/5"
+      style="text-decoration: none; color: black"
+    >
+      {{ card?.titre }}</a
+    >
+  </div>
+</div>

@@ -39,6 +39,8 @@
     border-radius: 6px 6px 0 0;
     transform: scale(1);
     transition: transform 0.5s ease;
+    position: relative;
+
   }
   
   .card-image img {
@@ -87,3 +89,22 @@
     cursor: pointer;
   }
   
+  .use-this-model-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #007bff;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
+    width: 100%;
+  }
+  
+  .card-image:hover .use-this-model-btn {
+    display: block;
+    z-index: 1; /* Bring the button above the image */
+  }
