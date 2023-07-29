@@ -3,11 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { CddComponent } from './components/cdd/cdd.component';
 import { CdiComponent } from './components/cdi/cdi.component';
 import { HomeComponent } from './components/home/home.component';
+import { AttestationComponent } from './components/attestation/attestation.component';
+import { LocationComponent } from './components/location/location.component';
 
 const routes: Routes = [
   { path: 'cdd', component: CddComponent },
   { path: 'cdi', component: CdiComponent },
-  { path: 'home', component: HomeComponent }
+  { path: 'home', component: HomeComponent },
+  { path: 'location', component: LocationComponent },
+  { path: 'attestation', component: AttestationComponent }
 ];
 
 @NgModule({
