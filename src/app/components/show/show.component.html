@@ -1,1 +1,62 @@
-<p>show works!</p>
+<section class="py-5">
+  <div class="container px-4 px-lg-5 mt-2">
+    <div class="row gx-4 gx-lg-5">
+      <div class="col-md-6">
+        <img
+          class="card-img-top mb-5 mb-md-0 fixed-img"
+          style="max-width: 400px"
+          [src]="card?.image"
+          [alt]="card?.sousType"
+        />
+      </div>
+      <div class="col-md-6">
+        <div class="small mt-3 mb-2 d-flex">
+          <a href="#" routerLink="/">
+            <mat-icon>home</mat-icon>
+          </a>
+          <p class="h6">
+            > {{ card?.category }} > {{ card?.type }} > {{ card?.sousType }}
+          </p>
+        </div>
+        <h2 class="display-6 fw-bolder">{{ card?.titre }}</h2>
+        <div class="fs-5 mb-5">
+          <span>Obtenez votre {{ card?.titre }} </span>
+        </div>
+        <p>A propos du document {{ card?.titre }}</p>
+        <p class="lead">
+          Le contrat de travail à durée indéterminée (CDI) constitue le contrat
+          de droit commun applicable entre un salarié et l’entreprise ou le
+          particulier qui l’emploie dans le cadre d’une relation de travail.
+          Toute autre forme de contrat de travail ne peut être conclue que dans
+          des cas d’exception. L’employeur peut être : toute personne morale
+          (société, association) ou entreprise individuelle ; mais également un
+          particulier qui a recours à un salarié employé à son domicile ou dans
+          l’une de ses résidences (voir dans ce cas les spécificités du contrat
+          ci-après). Toute personne physique a le droit d’être salarié. Il
+          existe toutefois des restrictions applicables aux mineurs et aux
+          étrangers (qui doivent être autoriser à travailler en France).
+        </p>
+        <p class="lead">
+          Le contrat de travail à temps plein sera conclu en principe sur la
+          base d’un temps de travail hebdomadaire de 35 heures. Certaines
+          fonctions telle que celle de cadre dirigeant peuvent toutefois
+          justifier de déroger aux 35 heures hebdomadaires. De la même manière,
+          certaines conventions collectives autorisent les parties à prévoir des
+          forfaits jours ou heures au titre permettant une plus grande liberté
+          dans l’organisation de l’emploi du temps du salarié. le salarié peut
+          faire des heures supplémentaires au delà de son contingent annuel
+          d’heures au titre de son contrant de travail, tout en ayant droit a un
+          repos compensateur. Il est à souligner que le temps de travail
+          applicable au stagiaire est soumis aux mêmes règles de celles
+          applicables aux salariés de l’entreprise.
+        </p>
+        <div class="d-flex justify justify-center">
+          <button class="btn btn-outline-dark flex-shrink-0" style="height: 50px;" type="button">
+            <mat-icon>create</mat-icon>
+            Remplir mon contrat
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

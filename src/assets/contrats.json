@@ -1,0 +1,56 @@
+[
+    {
+        "id":1,
+        "category": "Travail",
+        "type": "Contrat",
+        "sousType": "CDI",
+        "image": "/assets/screenshots/cdi.png",
+        "titre": "Contrat de travail CDI",
+        "component":"cdi"
+    },
+    {
+        "id":2,
+        "category": "Travail",
+        "type": "Contrat",
+        "sousType": "CDI",
+        "image": "/assets/screenshots/cdi-sans-logo.png",
+        "titre": "Contrat de travail CDI sans logo",
+        "component":"cdi"
+    },
+    {
+        "id":3,
+        "category": "Travail",
+        "type": "Contrat",
+        "sousType": "CDD",
+        "image": "/assets/screenshots/cdd.png",
+        "titre": "Contrat de travail CDD",
+        "component":"cdd"
+    },
+    {
+        "id":4,
+        "category": "Travail",
+        "type": "Contrat",
+        "sousType": "CDD",
+        "image": "/assets/screenshots/cdd-sans-logo.png",
+        "titre": "Contrat de travail CDD sans logo",
+        "component":"cdd"
+    },
+    {
+        "id":5,
+        "category": "Immobilier",
+        "type": "Contrat",
+        "sousType": "Location",
+        "image": "/assets/screenshots/location.png",
+        "titre": "Contrat de Location",
+        "component":"location"
+    },
+    {
+        "id":6,
+        "category": "Travail",
+        "type": "Attestation",
+        "sousType": "Attestation",
+        "image": "/assets/screenshots/attestation.png",
+        "titre": "Attestation de travail",
+        "component":"attestation"
+    }
+]

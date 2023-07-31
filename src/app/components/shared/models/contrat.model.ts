@@ -1,4 +1,5 @@
 export interface Contrat {
+  id:number;
   category: string;
   type: string;
   sousType: string;

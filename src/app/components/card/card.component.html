@@ -1,8 +1,10 @@
 <div (mouseenter)="isHovered = true" (mouseleave)="isHovered = false">
   <div class="card-image">
+    <a href="#" [routerLink]="['/show',card?.id]">
     <button class="use-this-model-btn" *ngIf="isHovered">
       Utiliser ce modéle
     </button>
+    </a>
     <img [src]="card?.image" alt="cdi" />
   </div>
   <div class="category mt-1">

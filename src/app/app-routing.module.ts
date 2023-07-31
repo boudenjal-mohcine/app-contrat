@@ -5,13 +5,15 @@ import { CdiComponent } from './components/cdi/cdi.component';
 import { HomeComponent } from './components/home/home.component';
 import { AttestationComponent } from './components/attestation/attestation.component';
 import { LocationComponent } from './components/location/location.component';
+import { ShowComponent } from './components/show/show.component';
 
 const routes: Routes = [
   { path: 'cdd', component: CddComponent },
   { path: 'cdi', component: CdiComponent },
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'location', component: LocationComponent },
-  { path: 'attestation', component: AttestationComponent }
+  { path: 'attestation', component: AttestationComponent },
+  { path: 'show/:id', component: ShowComponent }
 ];
 
 @NgModule({

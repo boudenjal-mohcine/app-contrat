@@ -4,74 +4,92 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CardComponent } from '../card/card.component';
 import { Contrat } from '../shared/models/contrat.model';
+import { HttpClientModule,HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-home',
   standalone: true,
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  imports: [MatIconModule, CommonModule, FormsModule, CardComponent],
+  imports: [MatIconModule, CommonModule, FormsModule, CardComponent,HttpClientModule],
 })
 export class HomeComponent implements OnInit {
-  ngOnInit(): void {
-    this.filtredCards = this.allCards;
-  }
+
+  constructor(private http: HttpClient) {}
+
   categories: string[] = ['Travail', 'Immobilier'];
   selectedCategory: string = 'Category';
-  allCards: Contrat[] = [
-    {
-      category: 'Travail',
-      type: 'Contrat',
-      sousType: 'CDI',
-      image: '/assets/screenshots/cdi.png',
-      titre: 'Contrat de travail CDI',
-    },
+  allCards: Contrat[] = []
+  //   {
+  //     category: 'Travail',
+  //     type: 'Contrat',
+  //     sousType: 'CDI',
+  //     image: '/assets/screenshots/cdi.png',
+  //     titre: 'Contrat de travail CDI',
+  //   },
 
-    {
-      category: 'Travail',
-      type: 'Contrat',
-      sousType: 'CDI',
-      image: '/assets/screenshots/cdi-sans-logo.png',
-      titre: 'Contrat de travail CDI sans logo',
-    },
+  //   {
+  //     category: 'Travail',
+  //     type: 'Contrat',
+  //     sousType: 'CDI',
+  //     image: '/assets/screenshots/cdi-sans-logo.png',
+  //     titre: 'Contrat de travail CDI sans logo',
+  //   },
 
-    {
-      category: 'Travail',
-      type: 'Contrat',
-      sousType: 'CDD',
-      image: '/assets/screenshots/cdd.png',
-      titre: 'Contrat de travail CDD',
-    },
+  //   {
+  //     category: 'Travail',
+  //     type: 'Contrat',
+  //     sousType: 'CDD',
+  //     image: '/assets/screenshots/cdd.png',
+  //     titre: 'Contrat de travail CDD',
+  //   },
 
-    {
-      category: 'Travail',
-      type: 'Contrat',
-      sousType: 'CDD',
-      image: '/assets/screenshots/cdd-sans-logo.png',
-      titre: 'Contrat de travail CDD sans logo',
-    },
+  //   {
+  //     category: 'Travail',
+  //     type: 'Contrat',
+  //     sousType: 'CDD',
+  //     image: '/assets/screenshots/cdd-sans-logo.png',
+  //     titre: 'Contrat de travail CDD sans logo',
+  //   },
 
-    {
-      category: 'Immobilier',
-      type: 'Contrat',
-      sousType: 'Location',
-      image: '/assets/screenshots/location.png',
-      titre: 'Contrat de Location',
-    },
+  //   {
+  //     category: 'Immobilier',
+  //     type: 'Contrat',
+  //     sousType: 'Location',
+  //     image: '/assets/screenshots/location.png',
+  //     titre: 'Contrat de Location',
+  //   },
 
-    {
-      category: 'Travail',
-      type: 'Attestation',
-      sousType: 'Attestation',
-      image: '/assets/screenshots/attestation.png',
-      titre: 'Attestation de travail',
-    },
-  ];
+  //   {
+  //     category: 'Travail',
+  //     type: 'Attestation',
+  //     sousType: 'Attestation',
+  //     image: '/assets/screenshots/attestation.png',
+  //     titre: 'Attestation de travail',
+  //   },
+  // ];
   filtredCards: Contrat[] = [];
   types: string[] = [];
   selectedType: string = 'Type';
   sousTypes: string[] = [];
   selectedSousType: string = 'Sous Type';
+
+  loadContrats() {
+    this.http.get<Contrat[]>('/assets/contrats.json').subscribe(
+      (data) => {
+        this.allCards = data;
+        this.filtredCards = data;
+      },
+      (error) => {
+        console.error('Failed to load contrats:', error);
+      }
+    );
+  }
+
+   ngOnInit(): void {
+    this.loadContrats();    
+  }
 
   categorySelected() {
     this.types = [];
