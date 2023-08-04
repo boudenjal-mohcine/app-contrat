@@ -1,13 +1,13 @@
 <div class="container mt-5">
   <header>
     <!-- Insérer ici le code HTML pour votre logo -->
-    <img src="assets/votre-logo-ici.png" alt="Logo de l'entreprise" id="logo" />
+    <img src="assets/votre-logo-ici.png" *ngIf="logo" alt="Logo de l'entreprise" id="logo" />
     <h2>Contrat de travail à Durée Indéterminée (CDI)</h2>
   </header>
   <div class="rubrique">
     <h3 style="margin-bottom: 20px">Entre les soussignés :</h3>
     <p>
-      La société _______ au capital de _______ DH, immatriculé sous le numéro
+      La société {{form?.value.nom_employe}} au capital de _______ DH, immatriculé sous le numéro
       _________ dont le siège social est situé à ________
     </p>
     <p>

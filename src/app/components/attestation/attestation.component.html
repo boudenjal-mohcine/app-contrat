@@ -1,26 +1,26 @@
-<div class="container mt-5">
+<div class="container mt-5" class="printable-content">
     <header>
         <!-- Insérer ici le code HTML pour votre logo -->
-        <img src="/assets/votre-logo-ici.png" alt="Logo de l'entreprise" id="logo" />
+        <img [src]="this.form?.value.logo??'/assets/votre-logo-ici.png'" alt="Logo de l'entreprise" id="logo" class="img-thumbnail" />
         <h2>Attestation de travail</h2>
       </header>
       <div class="rubrique">
         <p>
-          Nous soussignés société <b> _____________ </b> domiciliée à <b> _________________________ </b>
-          attestons par la présente que Mr (Mlle)(Mme) <b>__________________________</b> , Immatriculé à la CNSS sous le numéro
-          ______________________ , est employé au sein de notre société en qualité de <b>______________________</b>
+          Nous soussignés société <b> {{ this.form?.value.nom_societe || "_________" }} </b> domiciliée à <b>  {{ this.form?.value.addresse || "_________" }} </b>
+          attestons par la présente que Mr (Mlle)(Mme) <b>{{ this.form?.value.nom_employe +" "+ this.form?.value.prenom_employe || "_________" }}</b> , Immatriculé à la CNSS sous le numéro
+          <b>{{ this.form?.value.cnss || "_________" }}</b> , est employé au sein de notre société en qualité de <b>{{ this.form?.value.qualite || "_________" }}</b>
         </p>
         <p class="separateur"></p>
         <p class="separateur"></p>
         <p>
-          Et ce depuis le : <b>__/__/_____</b> à ce jour .
+          Et ce depuis le : <b>{{ this.form?.value.date_embauche || "_________" }}</b> à ce jour .
         </p>
         <p class="separateur"></p>
         <p class="separateur"></p>
         <p>La présente attestation lui est délivrée à sa demande pour servir et valoir ce que de droit.</p>
       <div class="rubrique">
           <p class="separateur"></p>
-        <p>Fait à _______, le ___/__/__</p>
+        <p>Fait à <B>{{ this.form?.value.lieu_signature || "_________" }}</B>, le <B>{{ this.form?.value.date_signature || "_________" }}</B></p>
         <div class="signatures">
           <div class="signature">
             <p>Signature</p>

@@ -5,4 +5,5 @@ export interface Contrat {
   sousType: string;
   titre: string;
   image: string;
+  component:string;
 }

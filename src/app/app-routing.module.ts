@@ -6,6 +6,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AttestationComponent } from './components/attestation/attestation.component';
 import { LocationComponent } from './components/location/location.component';
 import { ShowComponent } from './components/show/show.component';
+import { CreateComponent } from './components/create/create.component';
 
 const routes: Routes = [
   { path: 'cdd', component: CddComponent },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'location', component: LocationComponent },
   { path: 'attestation', component: AttestationComponent },
-  { path: 'show/:id', component: ShowComponent }
+  { path: 'show/:id', component: ShowComponent },
+  { path: 'create/:contrat', component: CreateComponent }
 ];
 
 @NgModule({

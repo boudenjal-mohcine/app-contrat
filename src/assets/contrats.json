@@ -15,7 +15,7 @@
         "sousType": "CDI",
         "image": "/assets/screenshots/cdi-sans-logo.png",
         "titre": "Contrat de travail CDI sans logo",
-        "component":"cdi"
+        "component":"cdi-without-logo"
     },
     {
         "id":3,
@@ -33,7 +33,7 @@
         "sousType": "CDD",
         "image": "/assets/screenshots/cdd-sans-logo.png",
         "titre": "Contrat de travail CDD sans logo",
-        "component":"cdd"
+        "component":"cdd-without-logo"
     },
     {
         "id":5,

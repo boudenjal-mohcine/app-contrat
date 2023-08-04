@@ -51,10 +51,12 @@
           applicables aux salariés de l’entreprise.
         </p>
         <div class="d-flex justify justify-center">
-          <button class="btn btn-outline-dark flex-shrink-0" style="height: 50px;" type="button">
-            <mat-icon>create</mat-icon>
-            Remplir mon contrat
-          </button>
+            <a href="#" [routerLink]="'/create/'+card?.component">
+                <button class="btn btn-outline-dark flex-shrink-0" style="height: 50px;" type="button">
+                    <mat-icon>create</mat-icon>
+                    Remplir mon contrat
+                  </button>
+            </a>
         </div>
       </div>
     </div>

@@ -36,3 +36,14 @@ header {
     padding-bottom: 20px;
     font-weight: bold;
   }
+
+  
+  @media print {
+    .printable-content {
+      /* Add your custom styles for printing */
+      /* For example, you can set font sizes, colors, margins, etc. */
+      font-size: 12pt;
+      color: rgb(175, 17, 17);
+      /* Add other print-specific styles as needed */
+    }
+  }

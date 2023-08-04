@@ -1,1 +1,210 @@
-<p>create works!</p>
+<section class="py-3">
+  <div class="container px-4 px-lg-5 mt-1">
+    <div class="row gx-4 gx-lg-5">
+      <div class="col-md-5 border">
+        <div>
+          <br />
+          <form class="col-md-8 container" [formGroup]="attestationForm" *ngIf="contrat==='attestation'">
+            <!-- Les données pour le employeur-->
+            <div *ngIf="choix == 0">
+              <br />
+              <div class="progress">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  style="width: 33%"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <br />
+              <br />
+              <p class="text-center ">
+                Les informations pour la societe
+              </p>
+
+              <div class="form-group">
+                <label class="mb-2 mt-2" for=""> Logo </label>
+                <input
+                class="form-control"
+                type="file"
+                formControlName="logo"
+                (change)="onFileSelected($event)"
+              />
+              </div>
+
+              <div class="form-group">
+                <label class="mb-2 mt-2" for=""> Nom sociéte </label>
+                <input
+                class="form-control"
+                formControlName="nom_societe"
+              />
+              </div>
+
+              <div class="form-group">
+                <label class="mb-2 mt-2" for=""> Adresse sociéte </label>
+                <input
+                class="form-control"
+                formControlName="addresse"
+              />
+              </div>
+    
+              <div class="d-flex justify-content-end mb-2 mt-5">
+                <button (click)="suivant(1)" class="btn btn-primary">
+                  Suivant
+                </button>
+              </div>
+            </div>
+    
+            <div *ngIf="choix == 1">
+              <!--   -->
+              <br />
+              <div class="progress">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  style="width: 66%"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <br />
+              <p class="text-center ">
+                Les informations pour l'employe
+              </p>
+              <br />
+              <div class="form-group mb-2">
+                <label for="" class="mb-2">Nom</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="nom_employe"
+                />
+              </div>
+              <div class="form-group  mb-2">
+                <label for="" class="mb-2"> Prenom </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="prenom_employe"
+                />
+                <div class="form-group  mb-2">
+                  <label for="" class="mb-2"> Qualite</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="qualite"
+                  />
+                </div>
+                <div class="form-group  mb-2">
+                  <label for="" class="mb-2"> CNSS</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="cnss"
+                  />
+                </div>
+              </div>
+              <div class="form-group  mb-2">
+                <label for="" class="mb-2"> Date d'embauche</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  formControlName="date_embauche"
+                />
+              </div>
+              <div class="d-flex justify-content-left mt-2" style="display: block">
+                <button
+                  (click)="suivant(0)"
+                  class="btn btn-secondary"
+                  style="text-align: end"
+                >
+                  Précedent
+                </button>
+              </div>
+              <div class="d-flex justify-content-end mb-2">
+                <button (click)="suivant(2)" class="btn btn-primary">
+                  Suivant
+                </button>
+              </div>
+            </div>
+    
+            <!-- Les information sur l'employeur-->
+    
+            <div *ngIf="choix == 2">
+              <br />
+              <div class="progress">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  style="width: 100%"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <br />
+              <br />
+              <p class="text-center ">
+                Signature
+              </p>
+    
+              <div class="form-group  mb-2">
+                <label class="mb-2 mt-2" for="name"> Lieu </label>
+                <input
+                  class="form-control"
+                  placeholder="Lieu"
+                  formControlName="lieu_signature"
+                  type="text"
+                />
+              </div>
+    
+              <div class="form-group  mb-2">
+                <label class="mb-2 mt-2" for="name"> Date </label>
+                <input
+                  class="form-control"
+                  placeholder="Lieu"
+                  formControlName="date_signature"
+                  type="date"
+                />
+              </div>
+
+             
+              <span> Cliquer "valider" pour confirmer votre données! </span>
+              <div class="d-flex justify-content-left mt-5">
+                <button (click)="suivant(3)" class="btn btn-secondary">
+                  Précedent
+                </button>
+              </div>
+    
+              <div class="d-flex justify-content-end mt-2">
+                <button type="button" class="btn btn-primary" ngxPrint [printSectionId]="'printableContent'">
+                  Imprimer
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-7 app-cdd-container border">
+        <div *ngIf="contrat === 'attestation'" id="printableContent"  class="printable-content">
+          <app-attestation  #attestationComponent [form]="this.attestationForm"></app-attestation>
+        </div>
+        <div *ngIf="contrat === 'cdd'">
+          <app-cdd></app-cdd>
+        </div>
+        <div *ngIf="contrat === 'location'">
+          <app-location></app-location>
+        </div>
+        <div *ngIf="contrat === 'cdi'">
+          <app-cdi [form]="this.cdiForm"></app-cdi>
+        </div>
+        <div *ngIf="contrat === 'cdd-without-logo'">
+          <app-cdd [logo]="false"></app-cdd>
+        </div>
+        <div *ngIf="contrat === 'cdi-without-logo'">
+          <app-cdi [logo]="false"></app-cdi>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

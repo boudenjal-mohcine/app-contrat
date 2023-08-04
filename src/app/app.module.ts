@@ -8,14 +8,15 @@ import { ShowComponent } from './components/show/show.component';
 import { HomeComponent } from './components/home/home.component';
 import { CreateComponent } from './components/create/create.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CardComponent } from './components/card/card.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxPrintModule } from 'ngx-print';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +28,11 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     CardComponent,
     ShowComponent,
-    HttpClientModule
+    CreateComponent,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+    NgxPrintModule
   ],
   providers: [],
   bootstrap: [AppComponent]
